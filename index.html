@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>JS Typing Speed Test</title>
+
+    <!-- ===Custom JS -->
+    <script type="module" src="script.js" defer></script>
+    <!-- ===Google font -->
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,700,700i,900,900i" type="text/css" media="all">
+    <!-- ====Custome CSS -->
+    <link rel="stylesheet" href="style.css">
+
+
+    <!-- ====Font awesome CDN==== -->
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <!-- ======Material Design Bootstrap CDN  -->
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <main id="main_container">
+        <div class="jumbotron">
+            <header class="masthead">
+                <h1>Get faster at typing</h1>
+                <div class="hand">
+                    <i class="fas fa-hands"></i>
+                </div>
+            </header>
+
+            <div class="text-white text-center py-5 px-5">
+                <div class="lead">
+                    <!-- alert guidline -->
+                    <div id="alert_guidline" class="animated alert alert-primary hide2" role="alert">
+                        This is a typing test. Your goal is to duplicate the provided text, EXACTLY, in the field below. The timer starts when you start typing, and only stops when you match this text exactly. Click me to say for send off!
+                        <p>You can click on the pair of hands uptop for another sentence </p>
+                    </div>
+
+                    <!-- alert success -->
+                    <div id="alert_success" class="animated alert alert-success hide" role="alert">
+                        <h4 class="alert-heading">Well done!</h4>
+                        <p> I think you can do better. Try again. Click for another sentence.</p>
+                        <hr>
+                        <p class="mb-0">If you've messed things up, you can always restart the challenge!</p>
+                    </div>
+
+                    <main class="main">
+                        <!-- .intro -->
+                        <section class="test-area ">
+
+                            <div class="hand_container">
+                                <div id="origin-text" class="">
+                                    <p class="text-center">Begin with me.Type exactly what you see!!</p>
+                                </div>
+                            </div>
+
+                            <!-- #origin-text -->
+
+                            <div class="test-wrapper text-center">
+                                <textarea id="test-area" name="textarea" rows="6" placeholder="The clock starts when you start typing."></textarea>
+                            </div>
+                            <!-- .test-wrapper -->
+
+                            <div class="meta">
+                                <section id="clock">
+                                    <div class="timer">00:00:00</div>
+                                </section>
+                                <button id="reset" class="btn" data-toggle="tooltip" data-placement="bottom" title="Click me for a new start!">
+                                    Start over 
+                                    <span id="badge_value" class="badge badge-primary ml-2">0</span>
+                                  </button>
+
+                            </div>
+                            <!-- .meta -->
+                        </section>
+                        <!-- .test-area -->
+                    </main>
+
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- =====Bootstrap core CDN -->
+    <!-- JQuery -->
+    <script type="text/javascript " src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js "></script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript " src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js "></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript " src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js "></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript " src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js "></script>
+
+    <!-- COnfetti-JS -->
+    <script src="https://cdn.jsdelivr.net/gh/mathusummut/confetti.js/confetti.min.js"></script>
+</body>
+
+</html>

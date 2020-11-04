@@ -1,0 +1,13 @@
+{
+    "name": "type-fast",
+    "version": "1.0.0",
+    "description": "",
+    "main": "script.js",
+    "scripts": {
+        "minify": "terser script.js -o script.min.js"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {}
+}

@@ -1,0 +1,386 @@
+body {
+    box-sizing: border-box;
+    overflow: auto;
+    text-overflow: clip;
+    justify-content: center;
+    align-items: center;
+}
+
+body,
+button,
+input,
+select,
+textarea,
+p {
+    font-family: 'Source Sans Pro', 'Helvetica', Arial, sans-serif;
+    font-size: 18px;
+    line-height: 1;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    clear: both;
+    color: black;
+}
+
+p {
+    margin-bottom: 1.5em;
+}
+
+b,
+strong {
+    font-weight: bold;
+}
+
+.hide {
+    display: none;
+    transition: .9s;
+}
+
+.hide2 {
+    visibility: hidden;
+    transition: .5s;
+}
+
+dfn,
+cite,
+em,
+i {
+    font-style: italic;
+}
+
+blockquote {
+    margin: 0 1.5em;
+}
+
+address {
+    margin: 0 0 1.5em;
+}
+
+pre {
+    background: #eee;
+    font-family: "Courier 10 Pitch", Courier, monospace;
+    font-size: 15px;
+    font-size: 1.5rem;
+    line-height: 1.6;
+    margin-bottom: 1.6em;
+    max-width: 100%;
+    overflow: auto;
+    padding: 1.6em;
+}
+
+code,
+kbd,
+tt,
+var {
+    font: 15px Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+}
+
+abbr,
+acronym {
+    border-bottom: 1px dotted #666;
+    cursor: help;
+}
+
+mark,
+ins {
+    background: #fff9c0;
+    text-decoration: none;
+}
+
+#main_container {
+    min-width: 1160px;
+    min-height: 608px;
+}
+
+.jumbotron {
+    background-size: cover;
+    height: 6vh;
+    background-image: linear-gradient(to top, #dfe9f3 0%, white 100%);
+}
+
+sup,
+sub {
+    font-size: 75%;
+    height: 0;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+}
+
+sup {
+    bottom: 1ex;
+}
+
+sub {
+    top: .5ex;
+}
+
+small {
+    font-size: 75%;
+}
+
+big {
+    font-size: 125%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.lead {
+    margin-top: -2rem;
+}
+
+.masthead {
+    padding-bottom: 1rem;
+}
+
+.success {
+    color: #429890;
+    border-radius: .1em;
+    font-size: xx-large;
+}
+
+.masthead h1 {
+    margin-top: -1rem;
+    text-align: center;
+    color: rgb(117, 13, 13)
+}
+
+.intro {
+    padding: 2em 2em;
+    color: #ffffff;
+    background: #429890;
+}
+
+.intro p,
+.test-area {
+    margin: 0 auto;
+    max-width: 550px;
+}
+
+.test-area {
+    margin-bottom: 4em;
+    padding: 0 2em;
+}
+
+textarea {
+    padding-left: .5rem;
+    background-color: #FFFFFF;
+}
+
+.test-wrapper {
+    border: 7px solid rgb(150, 149, 149);
+    border-radius: .3rem;
+    box-shadow: 10px 14px 50px rgb(0, 0, 0, .8);
+}
+
+#origin-text {
+    margin: 1em 0;
+    padding: 1.5em 1.5em 0;
+    text-align: center;
+    background-color: #FFFFFF;
+    box-shadow: 2px 2px 12px rgb(0, 0, 0, .4);
+    border-radius: .2rem;
+}
+
+.matched {
+    background-image: linear-gradient(to right, #43e97b 0%, #38f9d7 100%);
+    transition: .5s;
+}
+
+
+/* text box and hands icons styles */
+
+.hand_container {
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.hand {
+    position: absolute;
+    top: 7.5%;
+    left: 65%;
+    background-image: linear-gradient(to right, #f4f8fc 0%, #4f595a 100%);
+    border-radius: 100%;
+    padding: .5rem;
+}
+
+.hand:hover {
+    border: 7px solid rgb(238, 197, 190);
+    transition: .5s;
+    margin-top: -.7rem;
+}
+
+.flash_orig_text_onfail {
+    border-left-color: #f32424;
+    border-right-color: #f32424;
+    transition: .1s
+}
+
+.hand :hover {
+    cursor: pointer;
+    transition: .4s;
+    color: white;
+}
+
+.hand i:hover {
+    transition: .4s;
+    color: white;
+}
+
+.fas {
+    justify-content: center;
+    text-align: center;
+    font-size: 1.2rem;
+    color: rgb(158, 19, 19);
+}
+
+#origin-text p {
+    margin: 0;
+    color: black;
+    text-align: center;
+    padding-bottom: 1.5em;
+    font-size: 1.5rem;
+}
+
+.test-wrapper {
+    display: flex;
+}
+
+.test-wrapper textarea {
+    flex: 1;
+}
+
+.meta {
+    margin-top: 1em;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.timer {
+    color: #611414;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    text-align: center;
+    padding: .8rem;
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.meta section {
+    border-radius: .3rem;
+    min-width: 203px;
+    min-height: 40px;
+    box-shadow: 2px 8px 6px rgb(0, 0, 0, .4);
+}
+
+#reset {
+    padding: .5em 1em;
+    font-size: .7em;
+    width: 203px;
+    height: 75px;
+    font-weight: bold;
+    color: white;
+    background: gray;
+    border-radius: .3rem;
+    transition: .3s;
+    margin-left: -.1rem;
+    border-left: 6px solid black;
+    border-right: 6px solid black;
+    box-shadow: 2px 14px 12px rgb(0, 0, 0, .4);
+}
+
+.green {
+    color: #008000;
+}
+
+.green_border {
+    border-left: 50px solid #008000;
+    border-right: 50px solid #008000;
+    transition: .5s;
+}
+
+#reset:hover {
+    color: white;
+    transform: scale(1.1);
+    transition: .3s;
+    color: black;
+    background-color: #FFFFFFFF;
+}
+
+
+/* Alert guideline */
+
+#alert_guidline {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-shadow: 2px 2px 20px;
+    box-shadow: 2px 13px 12px rgb(0, 0, 0, .9);
+    transition: .5s;
+    top: 0%;
+    left: 0%;
+    z-index: 999;
+    width: 300px;
+}
+
+#alert_success {
+    position: absolute;
+    text-shadow: 2px 2px 13px;
+    box-shadow: 2px 2px 12px rgb(0, 0, 0, .9);
+    transition: .5s;
+    top: 0%;
+    right: 0%;
+    width: 300px;
+}
+
+@keyframes move_alert {
+    from {
+        width: 100vw;
+        height: 100vh;
+        overflow: hidden;
+        background-image: linear-gradient(-45deg, #FFC796 0%, #FF6B95 100%);
+    }
+    to {
+        width: 30vw;
+        height: 20vh;
+        top: 20.5%;
+        font-size: 17px;
+        display: flex;
+        flex-direction: column;
+        column-count: 2;
+        overflow: hidden;
+        min-width: 350px;
+        padding-top: 3rem;
+        padding-bottom: 2rem;
+        background: linear-gradient(to bottom, #323232 0%, #070707 40%, #1C1C1C 150%), linear-gradient(to top, rgba(255, 255, 255, 0.40) 0%, rgba(0, 0, 0, 0.25) 200%);
+        background-blend-mode: multiply;
+        color: white;
+        text-shadow: 2px 13px 3 rgba(16, 148, 137, 0.7)px;
+        animation-fill-mode: backwards;
+        box-shadow: 9px 14px 15px rgb(0, 0, 0, 2);
+        cursor: pointer;
+    }
+}
+
+#alert_guidline {
+    width: 100px;
+    height: 100px;
+    animation-name: move_alert;
+    animation-duration: 2s;
+}
+
+
+/* =================fancy box============== */
