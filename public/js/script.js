@@ -1,6 +1,6 @@
 "use strict"
 
-import { text_source } from "./public/resource.js";
+import { text_source } from "../resource.js";
 
 const testWrapper = document.querySelector(".test-wrapper");
 const testArea = document.querySelector("#test-area");
