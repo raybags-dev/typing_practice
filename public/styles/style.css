@@ -98,14 +98,9 @@ ins {
     margin-right: 10rem;
     margin-left: 10rem;
     height: 100vh;
-    overflow: hidden;
+    overflow: auto;
     box-shadow: 2px 13px 13px rgb(0, 0, .9);
-}
-
-.jumbotron {
-    background-size: cover;
-    height: 6vh;
-    background-image: linear-gradient(to top, #dfe9f3 0%, white 100%);
+    background-image: linear-gradient(to right, #a57b7b 100%, #a57b7b 100%);
 }
 
 sup,
@@ -153,9 +148,16 @@ body {
 }
 
 .masthead h1 {
-    margin-top: -1rem;
+    margin-top: 2rem;
+    text-shadow: 6px 2px 1px rgba(3, 3, 3, 0.5);
     text-align: center;
-    color: rgb(117, 13, 13)
+    text-transform: capitalize;
+    color: #FFFFFF;
+    font-weight: 500;
+    transition: .5s;
+    padding: .9rem .5rem;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-image: linear-gradient(to right, #705353 0%, #705353 100%);
 }
 
 .intro {
@@ -183,7 +185,7 @@ textarea {
 .test-wrapper {
     border: 7px solid rgb(150, 149, 149);
     border-radius: .3rem;
-    box-shadow: 10px 14px 50px rgb(0, 0, 0, .8);
+    box-shadow: 2px 20px 15px 2px rgb(0, 0, 0, .8);
 }
 
 #origin-text {
@@ -191,7 +193,7 @@ textarea {
     padding: 1.5em 1.5em 0;
     text-align: center;
     background-color: #FFFFFF;
-    box-shadow: 2px 2px 12px rgb(0, 0, 0, .4);
+    box-shadow: 2px 3px 30px 5px rgb(0, 0, 0, .8);
     border-radius: .2rem;
 }
 
@@ -200,9 +202,6 @@ textarea {
     transition: .5s;
 }
 
-
-/* text box and hands icons styles */
-
 .hand_container {
     display: inline-flex;
     flex-direction: row;
@@ -210,42 +209,31 @@ textarea {
     align-items: center;
 }
 
-.hand {
-    border-radius: 50%;
-    position: fixed;
-    top: 7%;
-    left: 63%;
-    cursor: pointer;
-    color: transparent;
-}
 
-.hand:focus-within {
-    transform: scale(1.1);
-}
+/* text box and hands icons styles */
 
 .fas {
-    display: flex;
-    justify-content: center;
     text-align: center;
     font-size: 2rem;
-    position: static;
-    top: 7.5%;
-    left: 63%;
-    color: red;
+    position: relative;
+    left: 70%;
+    top: -4.5rem;
+    transition: .9s;
+    color: rgb(102, 35, 35);
+    border: .3rem solid rgb(128, 95, 95);
+    border-left: 1rem solid #cfa2b4;
+    border-right: 1rem solid #dfb1c3;
     background-image: linear-gradient(to right, #f4f8fc 0%, #4f595a 100%);
     border-radius: 100%;
-    padding: .6rem;
+    padding: .4rem;
 }
 
 .hand:hover {
-    transition: .4s;
+    transition: .9s;
+    cursor: pointer;
     color: white;
-}
-
-.hand i:hover {
-    transition: .4s;
-    color: white;
-    transform: scale(1.1);
+    border: .3rem solid #FFFFFF;
+    background-image: linear-gradient(-20deg, #070707 0%, #ff9a44 100%);
 }
 
 .flash_orig_text_onfail {
@@ -278,7 +266,7 @@ textarea {
 }
 
 .timer {
-    color: #611414;
+    color: #FFFFFF;
     display: flex;
     justify-content: center;
     align-self: center;
@@ -302,12 +290,12 @@ textarea {
     height: 75px;
     font-weight: bold;
     color: white;
-    background: gray;
+    background: rgb(150, 112, 112);
     border-radius: .3rem;
-    transition: .3s;
+    transition: .8s;
     margin-left: -.1rem;
-    border-left: 6px solid black;
-    border-right: 6px solid black;
+    border-left: 6px solid #FFFFFF;
+    border-right: 6px solid #FFFFFF;
     box-shadow: 2px 14px 12px rgb(0, 0, 0, .4);
 }
 
@@ -324,26 +312,35 @@ textarea {
 #reset:hover {
     color: white;
     transform: scale(1.1);
-    transition: .3s;
-    color: black;
-    background-color: #FFFFFFFF;
+    transition: .5s;
+    color: #FFFFFF;
+    border-left: 20px solid #FFFFFF;
+    border-right: 20px solid #FFFFFF;
 }
 
+#reset:focus-within {
+    color: black;
+    transition: 2s;
+    border-left: 20px solid rgb(150, 112, 112);
+    border-right: 20px solid rgb(150, 112, 112);
+    background-color: #FFFFFF;
+    text-shadow: 200px 0px 1px rgb(0, 0, 0);
+}
 
-/* Alert guideline */
-
-#alert_guidline {
+#btn_modal {
     position: absolute;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-shadow: 2px 2px 20px;
-    box-shadow: 2px 13px 12px rgb(0, 0, 0, .9);
-    transition: .5s;
-    top: 0%;
-    left: 0%;
-    z-index: 999;
-    width: 300px;
+    font-size: 1.5rem;
+    color: white;
+    border: 1px solid white;
+    margin-left: 67%;
+    transition: 1s;
+    bottom: 86%;
+}
+
+#btn_modal:hover {
+    background-color: rgb(207, 157, 157);
+    transition: .9s;
+    color: white;
 }
 
 #alert_success {
@@ -356,41 +353,57 @@ textarea {
     width: 300px;
 }
 
-@keyframes move_alert {
-    from {
-        width: 100vw;
-        height: 100vh;
-        overflow: hidden;
-        background-image: linear-gradient(-45deg, #FFC796 0%, #FF6B95 100%);
-    }
-    to {
-        width: 30vw;
-        height: 20vh;
-        top: 20.5%;
-        font-size: 17px;
-        display: flex;
-        flex-direction: column;
-        column-count: 2;
-        overflow: hidden;
-        min-width: 350px;
-        padding-top: 3rem;
-        padding-bottom: 2rem;
-        background: linear-gradient(to bottom, #323232 0%, #070707 40%, #1C1C1C 150%), linear-gradient(to top, rgba(255, 255, 255, 0.40) 0%, rgba(0, 0, 0, 0.25) 200%);
-        background-blend-mode: multiply;
-        color: white;
-        text-shadow: 2px 13px 3 rgba(16, 148, 137, 0.7)px;
-        animation-fill-mode: backwards;
-        box-shadow: 9px 14px 15px rgb(0, 0, 0, 2);
-        cursor: pointer;
-    }
+
+/* ==================model tutorial============== */
+
+.modal-body {
+    position: relative;
+    height: 100%;
+    letter-spacing: 1px;
+    background-color: rgb(102, 80, 80);
 }
 
-#alert_guidline {
-    width: 100px;
-    height: 100px;
-    animation-name: move_alert;
-    animation-duration: 2s;
+.modal-header h4 {
+    text-align: center;
+    text-transform: capitalize;
+    color: #FFFFFF;
+    font-weight: 500;
+    transition: .5s;
+    padding: .9rem .5rem;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
+.modal-header,
+.modal-footer {
+    background-color: rgb(85, 58, 58);
+}
 
-/* =================fancy box============== */
+.modal-footer button {
+    position: relative;
+    border: 1px solid white;
+    right: 8rem;
+}
+
+.modal-footer button:hover {
+    color: black;
+    box-shadow: 2px 2px 7px rgba(241, 227, 227, 0.5);
+    transition: .7s;
+    background-color: #FFFFFF;
+}
+
+.container {
+    box-shadow: 2px 2px 7px rgb(0, 0, 0, .4);
+    background-image: linear-gradient(to right, #704432 20%, #300202 100%);
+    padding: .5rem;
+    border-radius: .3rem;
+    position: relative;
+}
+
+.container>div p {
+    box-shadow: 2px 2px 7px rgb(0, 0, 0, .4);
+    font-weight: 500;
+    opacity: .6;
+    padding: 1rem;
+    border-radius: .5rem;
+    font-style: italic;
+}

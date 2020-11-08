@@ -6,6 +6,10 @@ const testWrapper = document.querySelector(".test-wrapper");
 const testArea = document.querySelector("#test-area");
 const originText = document.querySelector("#origin-text p")
 
+const heading = document.querySelector('#head_text');
+const heading_icon = document.querySelector('.fas');
+
+
 const originTextContainer = document.querySelector("#origin-text");
 const resetButton = document.querySelector("#reset");
 const theTimer = document.querySelector(".timer");
@@ -20,6 +24,20 @@ const alertSuccess = document.querySelector("#alert_success");
 $(function() {
     $('[data-toggle="tooltip"]').tooltip();
 });
+
+// fade in header  after page loads
+
+$(window).on('load', function() {
+
+    heading.classList.remove('hide')
+    heading_icon.classList.remove('hide');
+
+    heading.classList.add('fadeIn');
+    heading_icon.classList.add('pulse');
+    heading_icon.classList.add('slower');
+    heading_icon.classList.add('infinite')
+});
+
 
 // create text generator hander 
 function createText() {
