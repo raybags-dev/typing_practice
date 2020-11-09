@@ -344,15 +344,22 @@ textarea {
     font-size: 1.5rem;
     color: white;
     border: 1px solid white;
-    margin-left: 50.7%;
+    margin-left: 58%;
     transition: 1s;
     bottom: 9%;
+    border-radius: .9rem;
+    size: 10px;
+    box-shadow: 6px 10px 8px rgb(0, 0, 0, .5);
 }
 
 #btn_modal:hover {
-    background-color: rgb(207, 157, 157);
-    transition: .9s;
-    color: white;
+    background-color: rgb(253, 250, 250);
+    transition: .8s;
+    color: rgb(117, 63, 63);
+    border-left: 10px solid white;
+    border-right: 10px solid white;
+    border-radius: 50rem;
+    text-shadow: 50px 1px 1px rgb(0, 0, 0, .5);
 }
 
 #alert_success {
