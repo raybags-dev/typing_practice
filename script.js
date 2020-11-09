@@ -4,7 +4,8 @@ import { text_source } from "./public/resource.js";
 
 const testWrapper = document.querySelector(".test-wrapper");
 const testArea = document.querySelector("#test-area");
-const originText = document.querySelector("#origin-text p")
+const originText = document.querySelector("#origin-text p");
+const text_main_container = document.querySelector('.hand_container')
 
 const heading = document.querySelector('#head_text');
 const heading_icon = document.querySelector('.fas');
@@ -19,8 +20,6 @@ const theTimer = document.querySelector(".timer");
 const btnValue = document.getElementById("badge_value");
 const giveMeText = document.querySelector(".hand");
 
-
-const alertGuide = document.querySelector("#alert_guidline");
 const alertSuccess = document.querySelector("#alert_success");
 
 // Tooltips Initialization
@@ -31,14 +30,18 @@ $(function() {
 // fade in header  after page loads
 
 $(window).on('load', function() {
-
     heading.classList.remove('hide')
     heading_icon.classList.remove('hide');
-
     heading.classList.add('fadeIn');
     heading_icon.classList.add('pulse');
     heading_icon.classList.add('slower');
     heading_icon.classList.add('infinite')
+    testWrapper.classList.add('slower');
+    originText.classList.add('fadeIn');
+    originText.classList.add('slower');
+    text_main_container.classList.add('fadeIn');
+    text_main_container.classList.add('slower');
+    testWrapper.style.cssText = 'border: .4rem solid #967070;';
 });
 
 
@@ -54,7 +57,6 @@ class Text {
     constructor(text) {
         this.text = text
     }
-
     renderText = function() {
         return originText.innerHTML = createText();
 
@@ -73,10 +75,10 @@ var my_interval = false;
 let timer = [0, 0, 0, 0, ];
 // Add leading zero to numbers 9 or below (purely for aesthetics):
 function leadingZero(time) {
-    if (timer <= 9) {
-        time = `0 ${time}`;
+    if (time <= 9) {
+        time = "0" + time;
     }
-    timer;
+    return time;
 }
 
 // e ===============error function=================
@@ -110,7 +112,9 @@ function removeAlertSuccess() {
 // Run a standard minute/second/hundredths timer:
 function runTimer() {
 
-    let currentTimer = `${timer[0]}:${timer[1]}:${timer[2]}`;
+    // let currentTimer = `${timer[0]}:${timer[1]}:${timer[2]}`;
+    let currentTimer = `${leadingZero(timer[0])}:${leadingZero(timer[1])}:${leadingZero(timer[2])}`;
+
 
     theTimer.innerHTML = currentTimer;
 
@@ -134,6 +138,7 @@ function spellCheck() {
         confetti.start(2000, 50);
 
         theTimer.classList.add('green');
+        theTimer.classList.add('flash')
         theTimer.style.cssText = "color: #FFFFFF"
         originTextContainer.classList.toggle('matched');
 
@@ -193,13 +198,14 @@ function reset() {
 
 
     testArea.value = '';
+    theTimer.classList.remove('flash')
     theTimer.innerHTML = '00:00:00';
     btnValue.innerText = '';
 
     theTimer.style.cssText = "";
     theTimer.classList.remove('green');
 
-    testWrapper.style.cssText = 'border: 7px solid grey; display: flex; justify-content: center; align-items: center; text-align: center;';
+    testWrapper.style.cssText = 'border: 7px solid  #967070; display: flex; justify-content: center; align-items: center; text-align: center;';
     originTextContainer.classList.remove('green_border');
 }
 
@@ -210,6 +216,18 @@ testArea.addEventListener('paste', runOnPasteError, false);
 remove_error.addEventListener('click', clearError, false);
 
 giveMeText.addEventListener('click', () => {
+    if (timerRunning) {
+        testArea.classList.add('flash')
+        testArea.classList.toggle('red_border');
+
+        setTimeout(() => {
+            testArea.classList.add('flash')
+            testArea.classList.toggle('red_border');
+        }, 100);
+        return
+    }
+
+
     let x = state.renderText();
     paragragh_text = x;
 }, true);

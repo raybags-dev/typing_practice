@@ -319,6 +319,12 @@ textarea {
     transition: .5s;
 }
 
+.red_border {
+    color: red;
+    border-left: .8rem solid red;
+    border-right: .8rem solid red;
+}
+
 #reset:hover {
     color: white;
     transform: scale(1.1);
@@ -342,9 +348,9 @@ textarea {
     font-size: 1.5rem;
     color: white;
     border: 1px solid white;
-    margin-left: 58%;
+    margin-left: 70%;
     transition: 1s;
-    bottom: 9%;
+    bottom: 0%;
     border-radius: .9rem;
     size: 10px;
     box-shadow: 6px 10px 8px rgb(0, 0, 0, .5);
