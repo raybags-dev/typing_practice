@@ -8,6 +8,9 @@ const originText = document.querySelector("#origin-text p")
 
 const heading = document.querySelector('#head_text');
 const heading_icon = document.querySelector('.fas');
+const contentConctainer = document.querySelector('#content_container');
+const errorText = document.querySelector('#err');
+const remove_error = document.querySelector('#error_icon');
 
 
 const originTextContainer = document.querySelector("#origin-text");
@@ -76,6 +79,18 @@ function leadingZero(time) {
     timer;
 }
 
+// e ===============error function=================
+function runOnPasteError() {
+    contentConctainer.classList.add('hide');
+    errorText.classList.remove('hide2');
+}
+
+// =================remove Error==================
+function clearError() {
+    errorText.classList.add('hide2');
+    contentConctainer.classList.remove('hide');
+}
+
 // flash border function
 function flashTimer() {
     theTimer.classList.toggle('.green');
@@ -88,16 +103,8 @@ function showAlertSuccess() {
     alertSuccess.classList.add("fadeInDown")
 }
 
-function showAlertGuide() {
-    return alertGuide.classList.remove("hide");
-}
-
 function removeAlertSuccess() {
     alertSuccess.classList.add("hide");
-}
-
-function removeAlertGuide() {
-    return alertGuide.classList.add("hide");
 }
 
 // Run a standard minute/second/hundredths timer:
@@ -197,8 +204,11 @@ function reset() {
 }
 
 // Event listeners for keyboard input and the reset button:
-testArea.addEventListener("keypress", start, false);
-testArea.addEventListener("keyup", spellCheck, false);
+testArea.addEventListener("keypress", start, true);
+testArea.addEventListener("keyup", spellCheck, true);
+testArea.addEventListener('paste', runOnPasteError, false);
+remove_error.addEventListener('click', clearError, false);
+
 giveMeText.addEventListener('click', () => {
     let x = state.renderText();
     paragragh_text = x;

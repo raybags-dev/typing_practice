@@ -7,7 +7,7 @@
     <title>JS Typing Speed Test</title>
 
     <!-- ===Custom JS -->
-    <script type="module" src="script.min.js" defer></script>
+    <script type="module" src="script.js" defer></script>
     <!-- ===Google font -->
     <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,700,700i,900,900i" type="text/css" media="all">
     <!-- ====Custome CSS -->
@@ -24,9 +24,17 @@
 
 </head>
 
-<body>
-    <main id="main_container">
-        <div class="">
+<body class="">
+    <main id="main_container" class="">
+
+        <!-- Error message -->
+        <div id="err" class="hide2 error_text">
+            <i id="error_icon" class="fas fa-exclamation-triangle"></i>
+            <p>Nop.Trying to take the easier way out ? common, you can do it! Just click the button above!</p>
+
+        </div>
+
+        <div id="content_container" class="">
             <header class="masthead animated">
                 <h1 id="head_text" class="animated hide">Get faster at typing</h1>
                 <i class="fas fa-hands animated hand"></i>
