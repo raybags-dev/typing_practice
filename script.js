@@ -141,6 +141,7 @@ function spellCheck() {
 
     } else if (textEntered == originTextMatch) {
         testWrapper.style.borderColor = "#65CCf3";
+        theTimer.style.cssText = "color: #FFFFFF"
 
     } else {
         testWrapper.style.borderLeftColor = "#f32424";

@@ -196,6 +196,9 @@ textarea {
     background-color: #FFFFFF;
     box-shadow: 2px 3px 30px 5px rgb(0, 0, 0, .8);
     border-radius: .2rem;
+    transition: .5s;
+    border-left: .7rem solid rgb(94, 76, 76);
+    border-right: .7rem solid rgb(94, 76, 76);
 }
 
 .matched {
@@ -208,6 +211,8 @@ textarea {
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
+    padding-bottom: 2rem;
+    transform: .7s;
 }
 
 
@@ -243,12 +248,18 @@ textarea {
     transition: .1s
 }
 
+#origin-text {
+    margin-top: -2rem;
+}
+
 #origin-text p {
     margin: 0;
-    color: black;
+    color: rgb(100, 9, 9);
     text-align: center;
     padding-bottom: 1.5em;
+    text-shadow: 2px 1px 1px rgb(0, 0, 0, .4);
     font-size: 1.5rem;
+    font-weight: 600;
 }
 
 .test-wrapper {
@@ -333,9 +344,9 @@ textarea {
     font-size: 1.5rem;
     color: white;
     border: 1px solid white;
-    margin-left: 67%;
+    margin-left: 50.7%;
     transition: 1s;
-    bottom: 86%;
+    bottom: 9%;
 }
 
 #btn_modal:hover {
