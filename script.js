@@ -48,7 +48,7 @@ $(window).on('load', function() {
 // create text generator hander 
 function createText() {
     let result = Object.values(text_source);
-    let textIndex = Math.floor(Math.random() * 31);
+    let textIndex = Math.floor(Math.random() * 101);
     return result[textIndex]
 }
 
