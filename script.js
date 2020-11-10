@@ -20,6 +20,9 @@ const theTimer = document.querySelector(".timer");
 const btnValue = document.getElementById("badge_value");
 const giveMeText = document.querySelector(".hand");
 
+const autoGuidePopUp = document.getElementById('btn_modal');
+const guideParagraphs = document.querySelectorAll('[id=p1]');
+
 const alertSuccess = document.querySelector("#alert_success");
 
 // Tooltips Initialization
@@ -42,7 +45,18 @@ $(window).on('load', function() {
     text_main_container.classList.add('fadeIn');
     text_main_container.classList.add('slower');
     testWrapper.style.cssText = 'border: .4rem solid #967070;';
+    showGuide()
 });
+
+function showGuide() {
+    console.log('loaded successfully');
+    autoGuidePopUp.click();
+
+    guideParagraphs.forEach(element => {
+        element.classList.add('fadeInDown');
+        element.style.cssText = "border-left: .4rem solid rgb(150, 112, 112); border-right: .4rem solid rgb(150, 112, 112); box-shadow: 2px 2px 9px rgb(0,0,0,.6); border-radius: .3rem; transition: .2s;"
+    });
+}
 
 
 // create text generator hander 
