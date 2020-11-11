@@ -73,7 +73,7 @@ const text_source = {
 
     34: `"When one door of happiness closes, another opens; but often we look so long at the closed door that we do not see the one which has been opened for us." -Helen Keller`,
 
-    35: `"Twenty years from now you will be more disappointed by the things that you didn’t do than by the ones you did do." -Mark Twain`,
+    35: `"Twenty years from now you will be more disappointed by the things that you didn't do than by the ones you did do." -Mark Twain`,
 
     36: `"When I dare to be powerful -to use my strength in the service of my vision, then it becomes less and less important whether I am afraid." -Audre Lorde`,
 
@@ -83,9 +83,9 @@ const text_source = {
 
     39: `"Those who dare to fail miserably can achieve greatly." -John F. Kennedy`,
 
-    40: `"I can’t give you a sure-fire formula for success, but I can give you a formula for failure: try to please everybody all the time." -Herbert Bayard Swope`,
+    40: `"I can't give you a sure-fire formula for success, but I can give you a formula for failure: try to please everybody all the time." -Herbert Bayard Swope`,
 
-    41: `"Would you like me to give you a formula for success? It’s quite simple, really: Double your rate of failure. You are thinking of failure as the enemy of success. But it isn’t at all. You can be discouraged by failure or you can learn from it, so go ahead and make mistakes. Make all you can. Because remember that’s where you will find success." -Thomas J. Watson`,
+    41: `"Would you like me to give you a formula for success? It's quite simple, really: Double your rate of failure. You are thinking of failure as the enemy of success. But it isn't at all. You can be discouraged by failure or you can learn from it, so go ahead and make mistakes. Make all you can. Because remember that's where you will find success." -Thomas J. Watson`,
 
     42: `"It is hard to fail, but it is worse never to have tried to succeed." -Theodore Roosevelt`,
 
@@ -97,7 +97,7 @@ const text_source = {
 
     46: `"Love is a serious mental disease." -Plato`,
 
-    47: `"Our greatest fear should not be of failure… but of succeeding at things in life that don’t really matter." -Francis Chan`,
+    47: `"Our greatest fear should not be of failure… but of succeeding at things in life that don't really matter." -Francis Chan`,
 
     48: `"It had long since come to my attention that people of accomplishment rarely sat back and let things happen to them. They went out and happened to things." -Leonardo Da Vinci`,
 
@@ -107,13 +107,13 @@ const text_source = {
 
     51: `"Only put off until tomorrow what you are willing to die having left undone." -Pablo Picasso`,
 
-    52: `"Many of life’s failures are people who did not realize how close they were to success when they gave up." -Thomas A. Edison`,
+    52: `"Many of life's failures are people who did not realize how close they were to success when they gave up." -Thomas A. Edison`,
 
     53: `"If you want to live a happy life, tie it to a goal, not to people or things." -Albert Einstein`,
 
-    54: `"Success is just a war of attrition. Sure, there’s an element of talent you should probably possess. But if you just stick around long enough, eventually something is going to happen." -Dax Shepard`,
+    54: `"Success is just a war of attrition. Sure, there's an element of talent you should probably possess. But if you just stick around long enough, eventually something is going to happen." -Dax Shepard`,
 
-    55: `"The opposite of love is not hate; it’s indifference." -Elie Wiesel`,
+    55: `"The opposite of love is not hate; it's indifference." -Elie Wiesel`,
 
     56: `"The good news is that the moment you decide that what you know is more important than what you have been taught to believe, you will have shifted gears in your quest for abundance. Success comes from within, not from without." -Elie Wiesel`,
 
@@ -131,11 +131,11 @@ const text_source = {
 
     63: `"Live in the sunshine, swim the sea, drink the wild air." -Ralph Waldo Emerson`,
 
-    64: `"Success in business requires training and discipline and hard work. But if you’re not frightened by these things, the opportunities are just as great today as they ever were." -David Rockefeller`,
+    64: `"Success in business requires training and discipline and hard work. But if you're not frightened by these things, the opportunities are just as great today as they ever were." -David Rockefeller`,
 
     65: `"The purpose of our lives is to be happpy." -Dalai Lama`,
 
-    66: `"Your time is limited, so don’t waste it living someone else’s life. Don’t be trapped by dogma -which is living with the results of other people’s thinking." -Steve Jobs`,
+    66: `"Your time is limited, so don't waste it living someone else's life. Don't be trapped by dogma -which is living with the results of other people's thinking." -Steve Jobs`,
 
     67: `"Success is how high you bounce when you hit bottom." -George S. Patton`,
 
@@ -147,13 +147,13 @@ const text_source = {
 
     71: `"Success is not final, failure is not fatal: it is the courage to continue that counts." -Winston Churchill`,
 
-    72: `"You’re not obligated to win. You’re obligated to keep trying. To the best you can do everyday." -Jason Mraz`,
+    72: `"You're not obligated to win. You're obligated to keep trying. To the best you can do everyday." -Jason Mraz`,
 
     73: `"If life were predictable it would cease to be life, and be without flavor." -Eleanor Roosevelt`,
 
-    74: `"If you don’t design your own life plan, chances are you’ll fall into someone else’s plan. And guess what they have planned for you? Not much." -Jim Rohn`,
+    74: `"If you don't design your own life plan, chances are you'll fall into someone else's plan. And guess what they have planned for you? Not much." -Jim Rohn`,
 
-    75: `"The question isn’t who is going to let me; it’s who is going to stop me." -Ayn Rand`,
+    75: `"The question isn't who is going to let me; it's who is going to stop me." -Ayn Rand`,
 
     76: `"The three great essentials to achieve anything worthwhile are, first, hard work; second, stick-to-itiveness; third, common sense." -Thomas A. Edison`,
 
@@ -163,11 +163,11 @@ const text_source = {
 
     79: `"Yesterday is history, tomorrow is a mystery, today is a gift of God, which is why we call it the present." -Bil Keane`,
 
-    80: `"Life isn’t about finding yourself. Life is about creating yourself." -George Bernard Shaw`,
+    80: `"Life isn't about finding yourself. Life is about creating yourself." -George Bernard Shaw`,
 
-    81: `"The whole secret of a successful life is to find out what is one’s destiny to do, and then do it." -Henry Ford`,
+    81: `"The whole secret of a successful life is to find out what is one's destiny to do, and then do it." -Henry Ford`,
 
-    82: `"Success? I don’t know what that word means. I’m happy. But success, that goes back to what in somebody’s eyes success means. For me, success is inner peace. That’s a good day for me." -Denzel Washington`,
+    82: `"Success? I don't know what that word means. I'm happy. But success, that goes back to what in somebody's eyes success means. For me, success is inner peace. That's a good day for me." -Denzel Washington`,
 
     83: `"A kiss is a lovely trick designed by nature to stop speech when words become superfluous." -Ingrid Bergman`,
 
@@ -197,7 +197,7 @@ const text_source = {
 
     96: `"Every child is an artist, the problem is staying an artist when you grow up." -Pablo Picasso`,
 
-    97: `"Have no fear of perfection, you’ll never reach it." -Salvador Dali`,
+    97: `"Have no fear of perfection, you'll never reach it." -Salvador Dali`,
 
     98: `"Life is not a problem to be solved, but a reality to be experienced." -Søren Kierkegaard`,
 
