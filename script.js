@@ -1,9 +1,7 @@
 "use strict"
-
-import { text_source } from "./public/resource.js";
+import { text_source } from "./public/js/resource.js";
 
 const error_body = document.body;
-
 const testWrapper = document.querySelector(".test-wrapper");
 const testArea = document.querySelector("#test-area");
 const originText = document.querySelector("#origin-text p");
@@ -15,6 +13,10 @@ const contentConctainer = document.querySelector('#content_container');
 const errorText = document.querySelector('#err');
 const remove_error = document.querySelector('#error_icon');
 const arror_err = document.getElementById("arrow_icon");
+
+// Spinner//
+const spinnerIcon = document.getElementById('spinner');
+const reults_btn = document.getElementById('result_btn_1');
 
 
 const originTextContainer = document.querySelector("#origin-text");
@@ -28,8 +30,6 @@ const guideParagraphs = document.querySelectorAll('[id=p1]');
 
 const alertSuccess = document.querySelector("#alert_success");
 
-
-let errorPersists = true;
 // variable for holding the running state of timer 
 var timerRunning;
 // variable holds setInterval function
@@ -44,7 +44,6 @@ $(function() {
 });
 
 // fade in header  after page loads
-
 $(window).on('load', function() {
     heading.classList.remove('hide')
     heading_icon.classList.remove('hide');
@@ -58,7 +57,10 @@ $(window).on('load', function() {
     text_main_container.classList.add('fadeIn');
     text_main_container.classList.add('slower');
     testWrapper.style.cssText = 'border: .4rem solid #967070;';
+    // automatice guide popup
     showGuide()
+        //====Spinner funtionality======//
+    $(spinnerIcon).fadeOut("slow");;
 });
 
 function showGuide() {
@@ -71,6 +73,11 @@ function showGuide() {
     });
 }
 
+// Pull out results function//
+
+function result() {
+    reults_btn.click();
+}
 
 // create text generator hander 
 function createText() {
@@ -81,6 +88,7 @@ function createText() {
 
 // e ===============error function=================
 function runOnPasteError() {
+    errorText.style.cssText = "background: rgb(70, 51, 51);";
     contentConctainer.classList.add('hide');
     errorText.classList.remove('hide2');
     errorText.classList.add('bounceIn');
@@ -89,11 +97,13 @@ function runOnPasteError() {
 }
 // =================remove Error==================
 function clearError() {
+    errorText.style.cssText = "box-shadow: 1px 1px 10px 1000px rgb(0, 0, 0, .4); transition: .2s";
     errorText.classList.add('hide2');
     contentConctainer.classList.remove('hide');
     arror_err.classList.add('zoomOutRight');
     remove_error.classList.add('zoomOut');
     errorText.classList.remove('bounceIn');
+
 }
 
 function flashErrorBoxOnBodyClick() {
@@ -172,6 +182,7 @@ function spellCheck() {
         originTextContainer.classList.toggle('matched');
 
         setTimeout(() => {
+            result();
             clearInterval(flashInterval);
             flashInterval = null;
         }, 1000);

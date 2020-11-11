@@ -358,7 +358,7 @@ textarea {
     font-size: 1.5rem;
     color: white;
     border: 1px solid white;
-    margin-left: 70%;
+    margin-left: 60%;
     transition: 1s;
     bottom: 0%;
     border-radius: .9rem;
@@ -413,7 +413,7 @@ textarea {
 
 .modal-footer button {
     position: relative;
-    border: 1px solid white;
+    border: 1px solid hsl(0, 0%, 100%);
     right: 8rem;
 }
 
@@ -484,4 +484,61 @@ textarea {
     color: rgb(128, 240, 128);
     margin-left: 2rem;
     transition: .5s;
+}
+
+
+/* Spinner style */
+
+#spinner {
+    position: fixed;
+    left: 44%;
+    top: 38%;
+    z-index: 9999;
+}
+
+
+/* =========Modal styles======= */
+
+.fa-times {
+    color: none;
+    padding: none;
+    border: none;
+    background-color: none;
+    background-image: none;
+    color: white;
+}
+
+.whte_color {
+    color: white;
+}
+
+th,
+td,
+.row {
+    color: white;
+}
+
+.btn_eff_1 .results {
+    position: relative;
+    transition: .3s;
+    right: 70% !important;
+    color: white;
+    border-radius: .2rem;
+    background-color: rgb(82, 56, 56);
+}
+
+.modal-footer .results:hover {
+    position: relative;
+    transition: .5s;
+    box-shadow: 1px 1px 10px 1000px rgb(0, 0, 0, .4);
+}
+
+#result_box1 {
+    display: grid;
+    justify-content: space-between;
+    position: relative;
+    top: -2rem;
+    left: .6rem;
+    border-radius: .3rem;
+    width: 50%;
 }

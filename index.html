@@ -21,16 +21,21 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
     <!-- Material Design Bootstrap -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" rel="stylesheet">
-
 </head>
 
 <body class="">
+    <!-- ===Spinner==== -->
+    <div id="spinner" class="spinner-border" style="width: 7rem; height: 7rem; color: rgb(172, 142, 142);" role="status">
+        <span class="sr-only">Loading...</span>
+    </div>
+    <!-- ===spinner==== -->
+
     <main id="main_container" class="">
         <!-- =====================Error message======== -->
         <!-- Card Dark -->
         <div id="err" class="card hide2  error_text animated">
             <!-- Card content -->
-            <div class="card-body elegant-color white-text rounded-bottom rounded-top">
+            <div class="card-body  white-text rounded-bottom rounded-top">
                 <!-- Title -->
                 <h4 class="card-title text-center text-white">Forbidden.</h4>
                 <hr class="hr-light">
@@ -51,9 +56,81 @@
                 <i class="fas fa-hands animated hand" data-toggle="popover" data-trigger="focus" title="Something wrong?" data-content="Hi, ongoing type session"></i>
             </header>
 
+
+            <!-- ===============Results card=====================-->
+            <!-- Button trigger modal-->
+            <button id="result_btn_1" type="button" class="btn  hide2" data-toggle="modal" data-target="#modalCart"></button>
+
+            <!-- Modal: modalCart -->
+            <div class="modal fade modal-full-height  modal-lg modal-top-left top" id="modalCart" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div id="result_box1" class="modal-left">
+                        <!--Header-->
+                        <div class="modal-header">
+                            <h4 class="modal-title" id="myModalLabel">Hey <strong>Name_space</strong> Your results</h4>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span class="whte_color" aria-hidden="true">×</span></button>
+                        </div>
+                        <!--Body-->
+                        <div class="modal-body">
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th></th>
+                                        <th>Xter/count</th>
+                                        <th>Xters/Sec</th>
+                                        <th>Score%</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row" data-number="1">1</th>
+                                        <td>_ _ _</td>
+                                        <td>_ _ _</td>
+                                        <td>_ _ _</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">2</th>
+                                        <td>_ _ _</td>
+                                        <td>_ _ _</td>
+                                        <td>_ _ _</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">3</th>
+                                        <td>_ _ _</td>
+                                        <td>_ _ _</td>
+                                        <td>_ _ _</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">4</th>
+                                        <td>_ _ _</td>
+                                        <td>_ _ _</td>
+                                        <td>_ _ _</td>
+                                    </tr>
+                                    <tr class="total">
+                                        <th scope="row">5</th>
+                                        <td>_ _ _</td>
+                                        <td>_ _ _</td>
+                                        <td>_ _ _</td>
+                                        <td></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                        </div>
+                        <!--Footer-->
+                        <div class="modal-footer">
+                            <div class="btn_eff_1">
+                                <button type="button" class="btn btn-outline results" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- ===============Result card popup=============== -->
+
+            <!-- ==================Guide slide out=========== -->
             <!-- guide button -->
             <span id="btn_container"><button id="btn_modal" draggable="true" type="button" class="btn btn-sm" data-toggle="modal" data-target="#sideModalTR"><i class="far fa-question-circle"></i></button></span>
-
             <div class="text-white text-center py-5 px-5 animated">
                 <div class="lead animated">
                     <div class="modal fade right" id="sideModalTR" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -90,8 +167,7 @@
                         </div>
                     </div>
                     <!-- Side Modal Top Right -->
-
-                    <!-- =======================needs work=============== -->
+                    <!-- ==================Guide slide out menuu=========== -->
 
                     <!-- alert success -->
                     <div id="alert_success" class="animated alert alert-success hide" role="alert">
@@ -106,7 +182,7 @@
                         <section class="test-area animated">
                             <div class="hand_container animated">
                                 <div id="origin-text" class="animated">
-                                    <p class="text-center animated">----</p>
+                                    <p class="text-center animated">--- </p>
                                 </div>
                             </div>
 
