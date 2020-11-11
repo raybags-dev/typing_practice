@@ -2,6 +2,8 @@
 
 import { text_source } from "./public/resource.js";
 
+const error_body = document.body;
+
 const testWrapper = document.querySelector(".test-wrapper");
 const testArea = document.querySelector("#test-area");
 const originText = document.querySelector("#origin-text p");
@@ -12,6 +14,7 @@ const heading_icon = document.querySelector('.fas');
 const contentConctainer = document.querySelector('#content_container');
 const errorText = document.querySelector('#err');
 const remove_error = document.querySelector('#error_icon');
+const arror_err = document.getElementById("arrow_icon");
 
 
 const originTextContainer = document.querySelector("#origin-text");
@@ -24,6 +27,16 @@ const autoGuidePopUp = document.getElementById('btn_modal');
 const guideParagraphs = document.querySelectorAll('[id=p1]');
 
 const alertSuccess = document.querySelector("#alert_success");
+
+
+let errorPersists = true;
+// variable for holding the running state of timer 
+var timerRunning;
+// variable holds setInterval function
+var my_interval = false;
+// array to hold timer number indices
+let timer = [0, 0, 0, 0, ];
+// Add leading zero to numbers 9 or below (purely for aesthetics):
 
 // Tooltips Initialization
 $(function() {
@@ -66,45 +79,27 @@ function createText() {
     return result[textIndex]
 }
 
-// populate  "P" element  class
-class Text {
-    constructor(text) {
-        this.text = text
-    }
-    renderText = function() {
-        return originText.innerHTML = createText();
-
-    }
-}
-
-const state = new Text();
-let text_result = state.renderText();
-let paragragh_text = document.querySelector("#origin-text p").textContent = text_result;
-
-// variable for holding the running state of timer 
-var timerRunning;
-// variable holds setInterval function
-var my_interval = false;
-// array to hold timer number indices
-let timer = [0, 0, 0, 0, ];
-// Add leading zero to numbers 9 or below (purely for aesthetics):
-function leadingZero(time) {
-    if (time <= 9) {
-        time = "0" + time;
-    }
-    return time;
-}
-
 // e ===============error function=================
 function runOnPasteError() {
     contentConctainer.classList.add('hide');
     errorText.classList.remove('hide2');
+    errorText.classList.add('bounceIn');
+    arror_err.classList.remove('zoomOutRight');
+    remove_error.classList.remove('zoomOut')
 }
-
 // =================remove Error==================
 function clearError() {
     errorText.classList.add('hide2');
     contentConctainer.classList.remove('hide');
+    arror_err.classList.add('zoomOutRight');
+    remove_error.classList.add('zoomOut');
+    errorText.classList.remove('bounceIn');
+}
+
+function flashErrorBoxOnBodyClick() {
+    let isOn = errorText.classList.contains('bounceIn');
+    (isOn) ? errorText.classList.remove('bounceIn'):
+        errorText.classList.add('bounceIn');
 }
 
 // flash border function
@@ -122,13 +117,33 @@ function showAlertSuccess() {
 function removeAlertSuccess() {
     alertSuccess.classList.add("hide");
 }
+// populate  "P" element  class
+class Text {
+    constructor(text) {
+        this.text = text
+    }
+    renderText = function() {
+        return originText.innerHTML = createText();
+
+    }
+}
+
+const state = new Text();
+let text_result = state.renderText();
+let paragragh_text = document.querySelector("#origin-text p").textContent = text_result;
+
+function leadingZero(time) {
+    if (time <= 9) {
+        time = "0" + time;
+    }
+    return time;
+}
 
 // Run a standard minute/second/hundredths timer:
 function runTimer() {
 
     // let currentTimer = `${timer[0]}:${timer[1]}:${timer[2]}`;
     let currentTimer = `${leadingZero(timer[0])}:${leadingZero(timer[1])}:${leadingZero(timer[2])}`;
-
 
     theTimer.innerHTML = currentTimer;
 
@@ -166,7 +181,7 @@ function spellCheck() {
         testWrapper.style.borderColor = "#008000";
 
     } else if (textEntered == originTextMatch) {
-        testWrapper.style.borderColor = "#65CCf3";
+        testWrapper.style.borderColor = "#008000";
         theTimer.style.cssText = "color: #FFFFFF"
 
     } else {
@@ -186,7 +201,7 @@ function start() {
         my_interval = setInterval(runTimer, 10);
 
     }
-    btnValue.innerText = (text_entered_length) + 1
+    btnValue.innerText = leadingZero((text_entered_length + 1));
 }
 
 
@@ -204,8 +219,6 @@ function reset() {
 
     timer = [0, 0, 0, 0, ];
     timerRunning = false;
-
-
 
     resetButton.classList.remove('green_border');
     resetButton.classList.add('green_border');
@@ -228,6 +241,7 @@ testArea.addEventListener("keypress", start, true);
 testArea.addEventListener("keyup", spellCheck, true);
 testArea.addEventListener('paste', runOnPasteError, false);
 remove_error.addEventListener('click', clearError, false);
+error_body.addEventListener('click', flashErrorBoxOnBodyClick, false);
 
 giveMeText.addEventListener('click', () => {
     if (timerRunning) {

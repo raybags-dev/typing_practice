@@ -130,6 +130,7 @@ body {
     margin: 0;
     padding: 0;
     scroll-behavior: smooth;
+    background-image: linear-gradient(to top, #5e4c4c 0%, #7a5151 100%);
 }
 
 .lead {
@@ -319,6 +320,15 @@ textarea {
     transition: .5s;
 }
 
+#badge_value {
+    background: rgb(214, 128, 128);
+    padding: .5rem;
+    border-radius: .3rem;
+    border: 1px solid rgb(248, 190, 190);
+    border-top: 1px solid transparent;
+    box-shadow: 2px 2px 14px rgba(250, 248, 248, 0.4);
+}
+
 .red_border {
     color: red;
     border-left: .8rem solid red;
@@ -443,53 +453,35 @@ textarea {
 
 /* copy paste error */
 
-.error {
-    background-color: red;
-}
-
-.error_text {
-    display: flex;
+#err {
     position: absolute;
-    justify-content: center;
-    align-items: center;
-    top: 0%;
-    color: white;
-    font-weight: 900;
-    border-radius: 0rem;
-    background: rgb(209, 101, 101);
-    height: 100vh;
-    width: 80vw;
+    left: 30%;
+    margin-top: 20%;
+    z-index: 999;
+}
+
+#error_icon h5 {
+    font-style: italic;
+    padding-right: 1rem;
+}
+
+#error_icon .far {
+    font-size: 1.5rem;
+    padding: .1rem;
+    background-color: white;
+    border: 3px solid rgb(255, 169, 155);
+    border-radius: 50%;
+    color: rgb(240, 128, 128);
+    margin-left: 2rem;
     transition: .5s;
 }
 
-.error_text p {
-    position: relative;
-    font-size: 1.3rem;
+#error_icon .far:hover {
+    font-size: 1.5rem;
+    padding: .2rem;
+    border: 3px solid rgb(155, 221, 160);
+    border-radius: 50%;
+    color: rgb(128, 240, 128);
+    margin-left: 2rem;
     transition: .5s;
-    left: -3rem;
-    text-shadow: 1px 4px 1px rgb(0, 0, 0, .5);
-    border-radius: 1rem;
-    padding: .5rem;
-}
-
-.error_text :nth-child(1) {
-    position: relative;
-    bottom: 40%;
-    color: rgb(119, 20, 20);
-    left: 35%;
-    padding: 1rem;
-    border: 1rem solid red;
-    cursor: pointer;
-    margin-top: -20rem;
-    font-size: 2rem;
-}
-
-.error_text i:nth-child(1):hover {
-    color: green;
-    padding: 1rem;
-    cursor: pointer;
-    border: .5rem solid white;
-    margin-top: -20rem;
-    transition: .9s;
-    font-size: 1rem;
 }
