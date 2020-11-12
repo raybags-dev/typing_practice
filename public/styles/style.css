@@ -521,8 +521,8 @@ td,
 .btn_eff_1 .results {
     position: relative;
     transition: .3s;
-    right: 70% !important;
     color: white;
+    transform: translate(-50%);
     border-radius: .2rem;
     background-color: rgb(82, 56, 56);
 }
