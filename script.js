@@ -6,28 +6,21 @@ const testWrapper = document.querySelector(".test-wrapper");
 const testArea = document.querySelector("#test-area");
 const originText = document.querySelector("#origin-text p");
 const text_main_container = document.querySelector('.hand_container')
-
 const heading = document.querySelector('#head_text');
 const heading_icon = document.querySelector('.fas');
 const contentConctainer = document.querySelector('#content_container');
 const errorText = document.querySelector('#err');
 const remove_error = document.querySelector('#error_icon');
 const arror_err = document.getElementById("arrow_icon");
-
-// Spinner//
 const spinnerIcon = document.getElementById('spinner');
 const reults_btn = document.getElementById('result_btn_1');
-
-
 const originTextContainer = document.querySelector("#origin-text");
 const resetButton = document.querySelector("#reset");
 const theTimer = document.querySelector(".timer");
 const btnValue = document.getElementById("badge_value");
 const giveMeText = document.querySelector(".hand");
-
 const autoGuidePopUp = document.getElementById('btn_modal');
 const guideParagraphs = document.querySelectorAll('[id=p1]');
-
 const alertSuccess = document.querySelector("#alert_success");
 
 // variable for holding the running state of timer 
@@ -63,9 +56,25 @@ $(window).on('load', function() {
     $(spinnerIcon).fadeOut("slow");;
 });
 
+function deliverTextToTextArea() {
+    if (timerRunning) {
+        testArea.classList.add('flash')
+        testArea.classList.toggle('red_border');
+        setTimeout(() => {
+            testArea.classList.add('flash')
+            testArea.classList.toggle('red_border');
+        }, 100);
+        return
+    }
+    let x = state.renderText();
+    paragragh_text = x;
+}
+
 function showGuide() {
-    console.log('loaded successfully');
-    autoGuidePopUp.click();
+    setTimeout(() => {
+        console.log('loaded successfully');
+        autoGuidePopUp.click();
+    }, 5000)
 
     guideParagraphs.forEach(element => {
         element.classList.add('fadeInDown');
@@ -74,7 +83,6 @@ function showGuide() {
 }
 
 // Pull out results function//
-
 function result() {
     reults_btn.click();
 }
@@ -151,14 +159,10 @@ function leadingZero(time) {
 
 // Run a standard minute/second/hundredths timer:
 function runTimer() {
-
     // let currentTimer = `${timer[0]}:${timer[1]}:${timer[2]}`;
     let currentTimer = `${leadingZero(timer[0])}:${leadingZero(timer[1])}:${leadingZero(timer[2])}`;
-
     theTimer.innerHTML = currentTimer;
-
     timer[3]++;
-
     timer[0] = Math.floor((timer[3] / 100) / 60);
     timer[1] = Math.floor((timer[3] / 100) - (timer[0] * 60));
     timer[2] = Math.floor(timer[3] - (timer[1] * 100) - (timer[0] * 6000));
@@ -253,21 +257,5 @@ testArea.addEventListener("keyup", spellCheck, true);
 testArea.addEventListener('paste', runOnPasteError, false);
 remove_error.addEventListener('click', clearError, false);
 error_body.addEventListener('click', flashErrorBoxOnBodyClick, false);
-
-giveMeText.addEventListener('click', () => {
-    if (timerRunning) {
-        testArea.classList.add('flash')
-        testArea.classList.toggle('red_border');
-
-        setTimeout(() => {
-            testArea.classList.add('flash')
-            testArea.classList.toggle('red_border');
-        }, 100);
-        return
-    }
-
-
-    let x = state.renderText();
-    paragragh_text = x;
-}, true);
-resetButton.addEventListener("click", function() { reset(); }, false);
+resetButton.addEventListener("click", reset, false);
+giveMeText.addEventListener('click', deliverTextToTextArea, true);
