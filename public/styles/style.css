@@ -530,7 +530,15 @@ td,
 .modal-footer .results:hover {
     position: relative;
     transition: .5s;
+    cursor: pointer !important;
     box-shadow: 1px 1px 10px 1000px rgb(0, 0, 0, .4);
+}
+
+#btn_2 {
+    cursor: pointer;
+    background-color: rgb(92, 50, 50);
+    border-radius: .3rem;
+    padding: .5rem;
 }
 
 #result_box1 {
