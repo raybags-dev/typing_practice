@@ -4,7 +4,7 @@
     "description": "",
     "main": "script.js",
     "scripts": {
-        "minify": "terser script.js -o script.min.js"
+        "teaser": "terser src/script.js public/js/anchors.js public/js/resource.js public/js/middleware/helpers.js public/js/middleware/preloads.js -o script.min.js"
     },
     "keywords": [],
     "author": "",
