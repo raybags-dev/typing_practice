@@ -74,4 +74,16 @@ class Text {
     }
 }
 
-export { Text, clearError, removeAlertSuccess, result, showAlertSuccess, flashTimer, flashErrorBoxOnBodyClick, runOnPasteError }
+// Add leading zero to numbers 9 or below (purely for aesthetics):
+function leadingZero(time) {
+    if (time <= 9) {
+        time = "0" + time;
+    }
+    return time;
+}
+// Initialize tooltip
+const tool_tip = $(function() {
+    $('[data-toggle="tooltip"]').tooltip();
+});
+
+export { Text, tool_tip, leadingZero, clearError, removeAlertSuccess, result, showAlertSuccess, flashTimer, flashErrorBoxOnBodyClick, runOnPasteError }

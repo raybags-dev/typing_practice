@@ -2,7 +2,7 @@
 // Preloads import
 import { preloads } from "../public/js/middleware/preloads.js";
 // helper functions import
-import { Text, clearError, removeAlertSuccess, result, showAlertSuccess, flashTimer, flashErrorBoxOnBodyClick, runOnPasteError } from "../public/js/middleware/helpers.js";
+import { Text, tool_tip, leadingZero, clearError, removeAlertSuccess, result, showAlertSuccess, flashTimer, flashErrorBoxOnBodyClick, runOnPasteError } from "../public/js/middleware/helpers.js";
 // Dependant anchors import
 import {
     testWrapper,
@@ -19,19 +19,14 @@ import {
 
 // Preloads events function
 preloads()
-
-// variable for holding the running state of timer 
+    // variable for holding the running state of timer 
 var timerRunning;
 // variable holds setInterval function
 var my_interval = false;
 // array to hold timer number indices
 let timer = [0, 0, 0, 0, ];
-// Add leading zero to numbers 9 or below (purely for aesthetics):
-
 // Tooltips Initialization
-$(function() {
-    $('[data-toggle="tooltip"]').tooltip();
-});
+tool_tip
 // Render text to test area function
 function deliverTextToTextArea() {
     if (timerRunning) {
@@ -60,13 +55,6 @@ Text;
 const state = new Text();
 let text_result = state.renderText();
 let paragragh_text = document.querySelector("#origin-text p").textContent = text_result;
-
-function leadingZero(time) {
-    if (time <= 9) {
-        time = "0" + time;
-    }
-    return time;
-}
 
 // Run a standard minute/second/hundredths timer:
 function runTimer() {
@@ -121,15 +109,12 @@ function spellCheck() {
 // Start the timer:
 function start() {
     let text_entered_length = testArea.value.length;
-
     if (text_entered_length === 0 && !timerRunning) {
         timerRunning = true;
         my_interval = setInterval(runTimer, 10);
-
     }
     btnValue.innerText = leadingZero((text_entered_length + 1));
 }
-
 
 // Reset everything:
 function reset() {
