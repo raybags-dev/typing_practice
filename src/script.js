@@ -1,15 +1,13 @@
 "use strict"
-import { text_source } from "../public/js/resource.js";
+// Preloads import
 import { preloads } from "../public/js/middleware/preloads.js";
+// helper functions import
+import { Text, clearError, removeAlertSuccess, result, showAlertSuccess, flashTimer, flashErrorBoxOnBodyClick, runOnPasteError } from "../public/js/middleware/helpers.js";
+// Dependant anchors import
 import {
     testWrapper,
     testArea,
-    originText,
-    contentConctainer,
-    errorText,
     remove_error,
-    arror_err,
-    reults_btn,
     error_body,
     alertSuccess,
     giveMeText,
@@ -19,6 +17,8 @@ import {
     originTextContainer,
 } from "../public/js/anchors.js"
 
+// Preloads events function
+preloads()
 
 // variable for holding the running state of timer 
 var timerRunning;
@@ -32,11 +32,7 @@ let timer = [0, 0, 0, 0, ];
 $(function() {
     $('[data-toggle="tooltip"]').tooltip();
 });
-
-// ------------------------------
-preloads()
-    // ------------------------------
-
+// Render text to test area function
 function deliverTextToTextArea() {
     if (timerRunning) {
         testArea.classList.add('flash')
@@ -50,70 +46,17 @@ function deliverTextToTextArea() {
     let x = state.renderText();
     paragragh_text = x;
 }
-// Pull out results function//
-function result() {
-    reults_btn.click();
-}
 
-// create text generator hander 
-function createText() {
-    let result = Object.values(text_source);
-    let textIndex = Math.floor(Math.random() * 101);
-    return result[textIndex]
-}
+// ----------------impplimentation
+clearError,
+removeAlertSuccess,
+result, showAlertSuccess,
+flashTimer,
+flashErrorBoxOnBodyClick,
+runOnPasteError
 
-// e ===============error function=================
-function runOnPasteError() {
-    errorText.style.cssText = "background: rgb(70, 51, 51);";
-    contentConctainer.classList.add('hide');
-    errorText.classList.remove('hide2');
-    errorText.classList.add('bounceIn');
-    arror_err.classList.remove('zoomOutRight');
-    remove_error.classList.remove('zoomOut')
-}
-// =================remove Error==================
-function clearError() {
-    errorText.style.cssText = "box-shadow: 1px 1px 10px 1000px rgb(0, 0, 0, .4); transition: .2s";
-    errorText.classList.add('hide2');
-    contentConctainer.classList.remove('hide');
-    arror_err.classList.add('zoomOutRight');
-    remove_error.classList.add('zoomOut');
-    errorText.classList.remove('bounceIn');
 
-}
-
-function flashErrorBoxOnBodyClick() {
-    let isOn = errorText.classList.contains('bounceIn');
-    (isOn) ? errorText.classList.remove('bounceIn'):
-        errorText.classList.add('bounceIn');
-}
-
-// flash border function
-function flashTimer() {
-    theTimer.classList.toggle('.green');
-    originTextContainer.classList.add('green_border');
-}
-
-function showAlertSuccess() {
-    alertSuccess.classList.remove('slideOutUp');
-    alertSuccess.classList.remove("hide");
-    alertSuccess.classList.add("fadeInDown")
-}
-
-function removeAlertSuccess() {
-    alertSuccess.classList.add("hide");
-}
-// populate  "P" element  class
-class Text {
-    constructor(text) {
-        this.text = text
-    }
-    renderText = function() {
-        return originText.innerHTML = createText();
-
-    }
-}
-
+Text;
 const state = new Text();
 let text_result = state.renderText();
 let paragragh_text = document.querySelector("#origin-text p").textContent = text_result;
