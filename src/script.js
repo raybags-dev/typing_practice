@@ -1,27 +1,24 @@
 "use strict"
-import { text_source } from "./public/js/resource.js";
+import { text_source } from "../public/js/resource.js";
+import { preloads } from "../public/js/middleware/preloads.js";
+import {
+    testWrapper,
+    testArea,
+    originText,
+    contentConctainer,
+    errorText,
+    remove_error,
+    arror_err,
+    reults_btn,
+    error_body,
+    alertSuccess,
+    giveMeText,
+    btnValue,
+    theTimer,
+    resetButton,
+    originTextContainer,
+} from "../public/js/anchors.js"
 
-const error_body = document.body;
-const testWrapper = document.querySelector(".test-wrapper");
-const testArea = document.querySelector("#test-area");
-const originText = document.querySelector("#origin-text p");
-const text_main_container = document.querySelector('.hand_container')
-const heading = document.querySelector('#head_text');
-const heading_icon = document.querySelector('.fas');
-const contentConctainer = document.querySelector('#content_container');
-const errorText = document.querySelector('#err');
-const remove_error = document.querySelector('#error_icon');
-const arror_err = document.getElementById("arrow_icon");
-const spinnerIcon = document.getElementById('spinner');
-const reults_btn = document.getElementById('result_btn_1');
-const originTextContainer = document.querySelector("#origin-text");
-const resetButton = document.querySelector("#reset");
-const theTimer = document.querySelector(".timer");
-const btnValue = document.getElementById("badge_value");
-const giveMeText = document.querySelector(".hand");
-const autoGuidePopUp = document.getElementById('btn_modal');
-const guideParagraphs = document.querySelectorAll('[id=p1]');
-const alertSuccess = document.querySelector("#alert_success");
 
 // variable for holding the running state of timer 
 var timerRunning;
@@ -36,25 +33,9 @@ $(function() {
     $('[data-toggle="tooltip"]').tooltip();
 });
 
-// fade in header  after page loads
-$(window).on('load', function() {
-    heading.classList.remove('hide')
-    heading_icon.classList.remove('hide');
-    heading.classList.add('fadeIn');
-    heading_icon.classList.add('pulse');
-    heading_icon.classList.add('slower');
-    heading_icon.classList.add('infinite')
-    testWrapper.classList.add('slower');
-    originText.classList.add('fadeIn');
-    originText.classList.add('slower');
-    text_main_container.classList.add('fadeIn');
-    text_main_container.classList.add('slower');
-    testWrapper.style.cssText = 'border: .4rem solid #967070;';
-    // automatice guide popup
-    showGuide()
-        //====Spinner funtionality======//
-    $(spinnerIcon).fadeOut("slow");;
-});
+// ------------------------------
+preloads()
+    // ------------------------------
 
 function deliverTextToTextArea() {
     if (timerRunning) {
@@ -69,19 +50,6 @@ function deliverTextToTextArea() {
     let x = state.renderText();
     paragragh_text = x;
 }
-
-function showGuide() {
-    setTimeout(() => {
-        console.log('loaded successfully');
-        autoGuidePopUp.click();
-    }, 5000)
-
-    guideParagraphs.forEach(element => {
-        element.classList.add('fadeInDown');
-        element.style.cssText = "border-left: .4rem solid rgb(150, 112, 112); border-right: .4rem solid rgb(150, 112, 112); box-shadow: 2px 2px 9px rgb(0,0,0,.6); border-radius: .3rem; transition: .2s;"
-    });
-}
-
 // Pull out results function//
 function result() {
     reults_btn.click();
