@@ -1,3 +1,9 @@
+/* variables */
+
+:root {
+    --text_shadow: 2px -2px 0px rgba(253, 250, 250, 0.5);
+}
+
 body,
 button,
 input,
@@ -7,9 +13,10 @@ p {
     font-family: 'Source Sans Pro', 'Helvetica', Arial, sans-serif;
     font-size: 18px;
     line-height: 1;
+    user-select: none;
 }
 
-body {
+text- body {
     box-sizing: border-box;
     overflow: auto;
     text-overflow: clip;
@@ -25,6 +32,7 @@ h5,
 h6 {
     clear: both;
     color: black;
+    user-select: none;
 }
 
 p {
@@ -69,6 +77,7 @@ pre {
     max-width: 100%;
     overflow: auto;
     padding: 1.6em;
+    user-select: none;
 }
 
 code,
@@ -175,11 +184,13 @@ body {
 .test-area {
     margin-bottom: 4em;
     padding: 0 2em;
+    user-select: none;
 }
 
 textarea {
     padding-left: .5rem;
     background-color: #FFFFFF;
+    user-select: none;
 }
 
 .test-wrapper {
@@ -198,6 +209,7 @@ textarea {
     transition: .5s;
     border-left: .7rem solid rgb(94, 76, 76);
     border-right: .7rem solid rgb(94, 76, 76);
+    user-select: none;
 }
 
 .matched {
@@ -549,4 +561,39 @@ td,
     left: .6rem;
     border-radius: .3rem;
     width: 50%;
+}
+
+
+/* results header  styling */
+
+#hd_results {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#hd_results h4:nth-child(1) {
+    position: relative;
+    text-align: center;
+    margin-top: -5%;
+    color: #FFFFFF;
+    text-shadow: var(--text_shadow);
+    left: 6rem;
+    padding-bottom: 2rem;
+}
+
+#hd_results h3:nth-child(1) {
+    color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#res_header h3:nth-child(1) {
+    color: white;
+    padding-right: 6rem;
+}
+
+#res_header h3:nth-child(2) {
+    color: white;
 }
