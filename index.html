@@ -4,16 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Speed-typing</title>
+    <title>Type faster</title>
 
     <!-- ===Custom JS -->
-    <script type="module" src="/src/script.js" defer></script>
+    <script type="module" src="/src/script.js"></script>
 
     <!-- Anchors -->
-    <script type="module" src="/public/js/anchors.js" defer></script>
-
-    <!-- minified js -->
-    <!-- <script type="modle" src="/script.min.js" defer></script> -->
+    <script type="module" src="/public/js/anchors.js"></script>
 
     <!-- ===Google font -->
     <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,700,700i,900,900i" type="text/css" media="all">
@@ -36,7 +33,6 @@
         <span class="sr-only">Loading...</span>
     </div>
     <!-- ===spinner==== -->
-
     <main id="main_container" class="">
         <!-- =====================Error message======== -->
         <!-- Card Dark -->
@@ -74,18 +70,7 @@
                             <div class="row">
                                 <h4 class="modal-title text-center" id="myModalLabel">Here are your Test Results</h4>
                             </div>
-
-                            <div id="res_header" class="d-flex justify-content-center">
-                                <h3 title="Words per Minute">Score%:
-                                    <span id="wpm" class="badge">_ _</span>
-                                </h3>
-                                <h3>Accuracy%:
-                                    <span id="acc" class="badge">_ _</span>
-                                </h3>
-                            </div>
-
                         </div>
-
                         <!--Body-->
                         <div class="modal-body">
                             <table class="table table-hover">
@@ -93,8 +78,8 @@
                                     <tr>
                                         <th></th>
                                         <th id="xt_count">Xter/count</th>
-                                        <th id="xt_sec">Xters/Sec</th>
-                                        <th id="scr_avrage">Words/Minute</th>
+                                        <th id="xt_sec">Words/Minute</th>
+                                        <th id="scr_avrage">Score %</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -106,28 +91,21 @@
                                     </tr>
                                     <tr>
                                         <th scope="row">2</th>
-                                        <td id="x4">implimentations in progress..</td>
-                                        <td id="x5">implimentations in progress..</td>
-                                        <td id="x6">implimentations in progress..</td>
+                                        <td id="x1">implimentations in progress..</td>
+                                        <td id="x2">implimentations in progress..</td>
+                                        <td id="x3">implimentations in progress..</td>
                                     </tr>
                                     <tr>
                                         <th scope="row">3</th>
-                                        <td id="x7">implimentations in progress..</td>
-                                        <td id="x8">implimentations in progress..</td>
-                                        <td id="x9">implimentations in progress..</td>
+                                        <td id="x1">implimentations in progress..</td>
+                                        <td id="x2">implimentations in progress..</td>
+                                        <td id="x3">implimentations in progress..</td>
                                     </tr>
                                     <tr>
                                         <th scope="row">4</th>
-                                        <td id="x10">implimentations in progress..</td>
-                                        <td id="x11">implimentations in progress..</td>
-                                        <td id="x12">implimentations in progress..</td>
-                                    </tr>
-                                    <tr class="total">
-                                        <th scope="row">5</th>
-                                        <td id="x13">implimentations in progress..</td>
-                                        <td id="x14">implimentations in progress..</td>
-                                        <td id="x15">implimentations in progress..</td>
-                                        <td></td>
+                                        <td id="x1">implimentations in progress..</td>
+                                        <td id="x2">implimentations in progress..</td>
+                                        <td id="x3">implimentations in progress..</td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -135,7 +113,7 @@
                         <!--Footer-->
                         <div class="modal-footer">
                             <div class="btn_eff_1">
-                                <button type="button" class="btn btn-outline results" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-outline results" data-dismiss="modal" style="cursor: pointer;">Close</button>
                             </div>
                         </div>
                     </div>
@@ -186,11 +164,10 @@
                     <!-- ==================Guide slide out menuu=========== -->
 
                     <!-- alert success -->
-                    <div id="alert_success" class="animated alert alert-success hide" role="alert">
+                    <div id="alert_success" class="animated alert hide" role="alert">
                         <h4 class="alert-heading">Well done!</h4>
-                        <p> I think you can do better. Try again. Click for another sentence.</p>
                         <hr>
-                        <p class="mb-0 animated">If you've messed things up, you can always restart the challenge!</p>
+                        <p> On your left are your results. Just click the "Start Button" for another round .</p>
                     </div>
 
                     <main class="main animated">
@@ -210,7 +187,7 @@
                                 <section id="clock">
                                     <div class="timer animated fadeIn slow">00:00:00</div>
                                 </section>
-                                <button id="reset" class="btn animated" data-toggle="tooltip" data-placement="bottom" title="Click me for a new start!">
+                                <button id="reset" class="btn animated" data-toggle="tooltip" data-placement="bottom" title="Fresh start!">
                             Start over 
                             <span id="badge_value" class="badge badge ml-2 animated fadeIn slower"></span>
                             </button>

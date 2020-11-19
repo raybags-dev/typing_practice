@@ -10,7 +10,7 @@ import { testArea, remove_error, error_body, giveMeText, resetButton } from "../
 preloads()
     // Tooltips Initialization
 tool_tip
-// ----------------impplimentation
+
 clearError,
 removeAlertSuccess,
 result, showAlertSuccess,

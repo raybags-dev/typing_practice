@@ -20,7 +20,16 @@ const autoGuidePopUp = document.getElementById('btn_modal');
 const guideParagraphs = document.querySelectorAll('[id=p1]');
 const alertSuccess = document.querySelector("#alert_success");
 
+// data achors
+
+const res_1 = document.getElementById('x1');
+const res_2 = document.getElementById('x2')
+const res_3 = document.getElementById('x2')
+
 export {
+    res_1,
+    res_2,
+    res_3,
     testWrapper,
     testArea,
     originText,

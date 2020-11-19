@@ -1,3 +1,5 @@
+import { newStorage } from "./data.js";
+
 import { text_source } from "../resource.js";
 import {
     reults_btn,
@@ -163,7 +165,8 @@ function start() {
         timerRunning = true;
         my_interval = setInterval(runTimer, 10);
     }
-    btnValue.innerText = leadingZero((text_entered_length + 1));
+    let characatorCount = btnValue.innerText = leadingZero((text_entered_length + 1));
+    return characatorCount
 }
 // Reset everything:
 function reset() {
