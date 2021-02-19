@@ -106,9 +106,66 @@ ins {
     margin-left: 10rem;
     height: 100vh;
     overflow: auto;
+    overflow: hidden;
     box-shadow: 2px 13px 13px rgb(0, 0, .9);
     background-image: linear-gradient(to right, #a57b7b 100%, #a57b7b 100%);
 }
+
+
+/* ================================================================================================= */
+
+
+/* 
+@media screen and (max-width: 1084px) {
+    #main_container {
+        margin-right: 20rem;
+        margin-left: 0%;
+        height: 100vh;
+        height: 100vh;
+        overflow: auto;
+        overflow: hidden !important;
+        transition: .5s;
+        box-shadow: 2px 13px 13px rgb(0, 0, .9);
+        background-image: linear-gradient(to right, #a57b7b 100%, #a57b7b 100%);
+    }
+    #btn_container {
+        position: absolute;
+        margin-top: 0%;
+        left: 50%;
+    }
+}
+
+@media screen and (max-width: 914px) {
+    #main_container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: -25%;
+        height: 100vh;
+        height: 100vh;
+        overflow: auto;
+        overflow: hidden !important;
+        transition: .5s;
+        box-shadow: 2px 13px 13px rgb(0, 0, .9);
+        background-image: linear-gradient(to right, #a57b7b 100%, #a57b7b 100%);
+    }
+    #btn_container {
+        position: absolute;
+        margin-top: 0%;
+        left: 50%;
+    }
+}
+
+@media screen and (max-width: 615px) {
+    #main_container {
+        filter: blur(100px);
+    }
+    #btn_container {
+        position: absolute;
+        margin-top: 0%;
+        left: 50%;
+    }
+} */
 
 sup,
 sub {
@@ -585,4 +642,10 @@ td,
     text-shadow: var(--text_shadow);
     left: 6rem;
     padding-bottom: 2rem;
+}
+
+@media screen and (max-width: 1476px) {
+    #main_container {
+        display: none;
+    }
 }
