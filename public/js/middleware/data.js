@@ -6,11 +6,6 @@ localStorage.removeItem('')
 localStorage.clear('');
 localStorage.length;
 
-// What is needed.
-// 1) Charactor count
-//2)  words per minute types ((Number of words typed/Time taken) * 60)
-//3)  Accuracy per session. Accuracy = (Error strokes/Correct strokes)* 100%
-
 class My_storage {
     constructor(charactorCount, totalKeyStrokes) {
         this.charactorCount = charactorCount

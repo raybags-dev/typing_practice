@@ -131,7 +131,6 @@ function spellCheck() {
         let flashInterval = setInterval(flashTimer, 200);
 
         showAlertSuccess();
-        confetti.start(2000, 50);
 
         theTimer.classList.add('green');
         theTimer.classList.add('flash')
@@ -177,7 +176,6 @@ function reset() {
 
     }, 2000)
     alertSuccess.classList.add('slideOutUp');
-    confetti.stop();
     timer = [0, 0, 0, 0, ];
     timerRunning = false;
 
